@@ -10,22 +10,114 @@
 
   <link href="../src/css/output.css" rel="stylesheet">
 </head>
-    <body class="bg-background h-screen">
-        <header class="bg-highlight h-20">
+    <body class="bg-background">
+        <header class="bg-highlight h-20 sticky top-0">
             <div class="h-full flex flex-row justify-between items-center mx-auto w-11/12">
                 <div class="h-5/6">
                     <a href="../feed/index.html"><img class="h-full" src="/src/media/logos/quiply-logo.png" alt="Quiply logo"></a>
                 </div>
-                <div>
+                <nav class="justify-self-center">
+                    <ul class="flex flex-row gap-4">
+                        <li><a href="#">Quips</a></li>
+                        <li><a href="#">Explore</a></li>
+                        <li><a href="#">Profile</a></li>
+                    </ul>
+                </nav>
+                <div class="flex items-center gap-4">
+                    <div class="h-8 p-1 bg-q-yellow rounded-full">
+                        <img class="h-full ml-0.5" src="/src/media/icons/notification-live.png" alt="Notification">
+                    </div>
                     <a href="../profile/index.html">
-                        <img class="h-10" src="/src/media/logos/quiply-logo.png" alt="Profile page link">
+                        <img class="h-10" src="/src/media/profile-image.png" alt="Profile page link">
                     </a>
                 </div>
             </div>
         </header>
+        <main class="w-screen bg-highlight">
+            <!-- Content -->
+            <div class="mx-auto w-full max-w-screen-lg bg-background flex flex-col items-center gap-2 pt-6">
+                <div class="search-filter flex justify-between items-center border-2 gap-4 flex-wrap w-11/12 max-w-screen-sm p-4 rounded-lg">
+                    <!-- Search and filter -->
+                    <div class="dropdown-filter w-24 border-2 rounded-lg">
+                        <select class="w-full h-9 p-2 bg-[url('/src/media/icons/filter.png')] bg-right bg-contain bg-no-repeat appearance-none bg-transparent" name="feed-filter" id="feedFilter">
+                            <option value="today">Today</option>
+                            <option value="oldest">Oldest</option>
+                            <option value="newest">Newest</option>
+                        </select>
+                    </div>
+                    <div class="search-bar flex gap-2 w-full max-w-96">
+                        <input class="rounded-lg px-2 w-full" id="searchBar" type="text" placeholder="Search">
+                        <button class="size-10 p-2 rounded-lg bg-highlight" id="searchButton" type="submit"><img class="size-full object-contain" src="/src/media/icons/search.png" alt="Search icon"></button>
+                    </div>
+                </div>
+                <!-- Create new post -->
+                <div class="flex items-center gap-5 border-2 rounded-lg w-11/12 max-w-screen-sm p-4">
+                    <img class="h-20" src="/src/media/profile-image.png" alt="Profile image">
+                    <form class="flex flex-col w-full p-5" action="">
+                        <textarea class="h-20 rounded-lg px-4 py-2" id="newPost" type="text" placeholder="What's the latest?"></textarea> 
+                        <button id="newPostButton" type="submit">Post</button>
+                    </form>
+                </div>
+                <!-- Posts -->
+                <div class="flex flex-col w-11/12 max-w-screen-sm gap-4 my-8">
+                    <!-- Example post -->
+                    <div class="flex flex-col gap-2">
+                        <h2 class="">DanielEker</h2>
+                        <div class="flex items-center gap-5 border-2 rounded-sm p-4">
+                            <img class="h-16" src="/src/media/profile-image.png" alt="">
+                            <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="flex items-center gap-2">
+                                <button id="likeButton" class="h-8 rounded-full"><img class="h-full " src="/src/media/icons/heart-empty.png" alt="like button"></button>
+                                <p class="font-lato" id="likeButtonValue">200</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <button id="commentButton" class="h-8 rounded-full"><img class="h-full " src="/src/media/icons/comment.png" alt="like button"></button>
+                                <p class="font-lato" id="commentButtonValue">32</p>
+                            </div>
+                        </div>
+                    </div>
 
-        
+                    <div class="flex flex-col gap-2">
+                        <h2 class="">DanielEker</h2>
+                        <div class="flex items-center gap-5 border-2 rounded-sm p-4">
+                            <img class="h-16" src="/src/media/profile-image.png" alt="">
+                            <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="flex items-center gap-2">
+                                <button id="likeButton" class="h-8 rounded-full"><img class="h-full " src="/src/media/icons/heart-empty.png" alt="like button"></button>
+                                <p class="font-lato" id="likeButtonValue">200</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <button id="commentButton" class="h-8 rounded-full"><img class="h-full " src="/src/media/icons/comment.png" alt="like button"></button>
+                                <p class="font-lato" id="commentButtonValue">32</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-2">
+                        <h2 class="">DanielEker</h2>
+                        <div class="flex items-center gap-5 border-2 rounded-sm p-4">
+                            <img class="h-16" src="/src/media/profile-image.png" alt="">
+                            <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="flex items-center gap-2">
+                                <button id="likeButton" class="h-8 rounded-full"><img class="h-full " src="/src/media/icons/heart-empty.png" alt="like button"></button>
+                                <p class="font-lato" id="likeButtonValue">200</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <button id="commentButton" class="h-8 rounded-full"><img class="h-full " src="/src/media/icons/comment.png" alt="like button"></button>
+                                <p class="font-lato" id="commentButtonValue">32</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
       
-      <script type="module" src="./dist/script.mjs"></script>
+      <script type="module" src=""></script>
     </body>
 </html>

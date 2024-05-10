@@ -18,8 +18,9 @@ module.exports = {
       },
       fontFamily: {
         sans: ["Raleway", "sans-serif"],
+        lato: ["Lato", "sans-serif"],
       },
-    },
   },
   plugins: [],
+  }
 };
