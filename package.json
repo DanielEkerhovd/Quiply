@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tailwindcss -i ./src/css/input.css -o ./dist/styles.css",
-    "watch": "tailwindcss -i ./src/css/input.css -o ./dist/styles.css --watch",
+    "build": "tailwindcss -i ./src/css/input.css -o ./src/css/output.css",
+    "watch": "tailwindcss -i ./src/css/input.css -o ./src/css/output.css --watch",
     "start": "live-server",
     "dev": "npm-run-all --parallel watch start"
   },
