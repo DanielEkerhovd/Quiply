@@ -3,45 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Quiply is a platform for creating and sharing quizzes.">
-
-  <link rel="icon" href="/src/media/logos/quiply-logo.png" type="image/png">
   <title>Quiply</title>
 
-  <link href="./src/css/output.css" rel="stylesheet">
+  <link href="./dist/styles.css" rel="stylesheet">
 </head>
-    <body class="bg-background h-screen">
-    
-      <div class="landing-content flex flex-col h-full justify-between content-center w-full">
-
-        <div class="landing-hero bg-highlight h-80 flex justify-center p-10 rounded-b-lg">
-          <img class="object-contain" src="/src/media/logos/LogoWText.png" alt="Quiply logo">
-        </div>
-        <div class="landing-form mx-auto flex flex-col flex-wrap justify-center content-center max-w-screen-lg w-full">
-          <div class="landing-login w-10/12 max-w-80">
-            <form class="flex flex-col flex-wrap" action="./feed/index.html">
-              <label for="email">Email</label>
-              <input class="h-10 rounded-md  px-2" type="email" id="email"  autofocus="autofocus">
-              <label class="mt-4" for="password">Password</label>
-              <div class="login-password relative flex flex-col text-center w-full mx-auto">
-                <input class="block h-10 rounded-md px-2" type="password" id="password">
-                <button class="absolute top-0 end-0" type="button" id="show-password"><img class="h-10 p-1.5" id="password-toggle" src="/src/media/icons/eye-closed.png" alt="Toggle visibility button"></button>
-              </div>
-              <div class="mt-8 flex flex-col gap-1 bg-highlight-hover p-2 rounded-lg">
-                <p>Hmm, seems like something went wrong.</p>
-                <div>Need help <a class="underline" href="#">recover your password?</a></div>
-              </div>
-              <div class="flex flex-col text-center w-full max-w-60 mx-auto">
-                <button class="bg-highlight hover:bg-highlight-hover rounded-lg h-12 font-medium text-lg mt-8" type="submit">Log in</button>
-              </div>
-            </form>
-          </div>
-        </div>
-        <div class="flex flex-col text-center w-10/12 max-w-60 mx-auto mb-10">
-          <h2 class="">New here?</h2>
-          <a href="./register/index.html" class="bg-q-yellow hover:bg-q-yellow-hover rounded-lg pt-3 h-12 font-medium text-lg">Register</a>
-        </div>
-      </div>
-      <script type="module" src="./dist/script.mjs"></script>
+    <body>
+    <h1 class="text-3xl font-bold text-center">Quiply</h1>
     </body>
 </html>
