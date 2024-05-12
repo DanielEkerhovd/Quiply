@@ -16,7 +16,7 @@
                 <div class="h-5/6">
                     <a href="../feed/index.html"><img class="h-full" src="/src/media/logos/quiply-logo.png" alt="Quiply logo"></a>
                 </div>
-                <nav class="justify-self-center">
+                <nav class="justify-self-center hidden sm:block">
                     <ul class="flex flex-row gap-4">
                         <li><a href="#">Quips</a></li>
                         <li><a href="#">Explore</a></li>
@@ -24,7 +24,10 @@
                     </ul>
                 </nav>
                 <div class="flex items-center gap-4">
-                    <div class="h-8 p-1 bg-q-yellow rounded-full">
+                    <div class="hamburger sm:hidden">
+                        <img class="size-10" src="/src/media/icons/hamburger.png" alt="">
+                    </div>
+                    <div class="h-8 p-1 bg-q-yellow rounded-full hidden sm:block">
                         <img class="h-full ml-0.5" src="/src/media/icons/notification-live.png" alt="Notification">
                     </div>
                     <a href="../profile/index.html">
@@ -36,7 +39,7 @@
         <main class="w-screen bg-highlight">
             <!-- Content -->
             <div class="mx-auto w-full max-w-screen-lg bg-background flex flex-col items-center gap-2 pt-6">
-                <div class="search-filter flex justify-between items-center border-2 gap-4 flex-wrap w-11/12 max-w-screen-sm p-4 rounded-lg">
+                <div class="search-filter flex justify-between border-2 gap-4 flex-wrap w-11/12 max-w-screen-sm p-4 rounded-lg">
                     <!-- Search and filter -->
                     <div class="dropdown-filter w-24 border-2 rounded-lg">
                         <select class="w-full h-9 p-2 bg-[url('/src/media/icons/filter.png')] bg-right bg-contain bg-no-repeat appearance-none bg-transparent" name="feed-filter" id="feedFilter">
@@ -51,20 +54,24 @@
                     </div>
                 </div>
                 <!-- Create new post -->
-                <div class="flex items-center gap-5 border-2 rounded-lg w-11/12 max-w-screen-sm p-4">
-                    <img class="h-20" src="/src/media/profile-image.png" alt="Profile image">
-                    <form class="flex flex-col w-full p-5" action="">
-                        <textarea class="h-20 rounded-lg px-4 py-2" id="newPost" type="text" placeholder="What's the latest?"></textarea> 
-                        <button id="newPostButton" type="submit">Post</button>
+                <div class="flex items-start gap-5 border-2 rounded-lg w-11/12 max-w-screen-sm p-4">
+                    <img class="h-20 hidden sm:block mt-5" src="/src/media/profile-image.png" alt="Profile image">
+                    <form class="flex flex-col items-end w-full p-5 gap-4" action="">
+                        <textarea class="h-20 rounded-lg px-4 py-2 w-full" id="newPost" type="text" placeholder="What's the latest?"></textarea> 
+                        <button class="bg-highlight rounded-lg h-10 sm:max-w-60 w-full" id="newPostButton" type="submit">Post</button>
                     </form>
                 </div>
                 <!-- Posts -->
                 <div class="flex flex-col w-11/12 max-w-screen-sm gap-4 my-8">
                     <!-- Example post -->
+
                     <div class="flex flex-col gap-2">
-                        <h2 class="">DanielEker</h2>
+                        <div class="flex items-end gap-1">
+                            <a href="#"><img class="size-12 sm:hidden" src="/src/media/profile-image.png" alt=""></a>
+                            <h2 class="">DanielEker</h2>
+                        </div>
                         <div class="flex items-center gap-5 border-2 rounded-sm p-4">
-                            <img class="h-16" src="/src/media/profile-image.png" alt="">
+                            <img class="h-16  hidden sm:block" src="/src/media/profile-image.png" alt="">
                             <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         </div>
                         <div class="flex items-center gap-2">
@@ -80,9 +87,12 @@
                     </div>
 
                     <div class="flex flex-col gap-2">
-                        <h2 class="">DanielEker</h2>
+                        <div class="flex items-end gap-1">
+                            <a href="#"><img class="size-12 sm:hidden" src="/src/media/profile-image.png" alt=""></a>
+                            <h2 class="">DanielEker</h2>
+                        </div>
                         <div class="flex items-center gap-5 border-2 rounded-sm p-4">
-                            <img class="h-16" src="/src/media/profile-image.png" alt="">
+                            <img class="h-16  hidden sm:block" src="/src/media/profile-image.png" alt="">
                             <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         </div>
                         <div class="flex items-center gap-2">
@@ -98,10 +108,13 @@
                     </div>
 
                     <div class="flex flex-col gap-2">
-                        <h2 class="">DanielEker</h2>
+                        <div class="flex items-end gap-1">
+                            <a href="#"><img class="size-12 sm:hidden" src="/src/media/profile-image.png" alt=""></a>
+                            <h2 class="">DanielEker</h2>
+                        </div>
                         <div class="flex items-center gap-5 border-2 rounded-sm p-4">
-                            <img class="h-16" src="/src/media/profile-image.png" alt="">
-                            <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <img class="h-16  hidden sm:block" src="/src/media/profile-image.png" alt="">
+                            <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         </div>
                         <div class="flex items-center gap-2">
                             <div class="flex items-center gap-2">

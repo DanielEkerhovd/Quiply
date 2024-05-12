@@ -559,6 +559,10 @@ video {
   --tw-contain-style:  ;
 }
 
+.invisible {
+  visibility: hidden;
+}
+
 .absolute {
   position: absolute;
 }
@@ -577,10 +581,6 @@ video {
 
 .top-0 {
   top: 0px;
-}
-
-.m-2 {
-  margin: 0.5rem;
 }
 
 .mx-auto {
@@ -617,12 +617,20 @@ video {
   margin-top: 2rem;
 }
 
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
 .block {
   display: block;
 }
 
 .flex {
   display: flex;
+}
+
+.hidden {
+  display: none;
 }
 
 .size-10 {
@@ -633,6 +641,16 @@ video {
 .size-full {
   width: 100%;
   height: 100%;
+}
+
+.size-12 {
+  width: 3rem;
+  height: 3rem;
+}
+
+.size-11 {
+  width: 2.75rem;
+  height: 2.75rem;
 }
 
 .h-10 {
@@ -703,12 +721,8 @@ video {
   width: 100vw;
 }
 
-.w-2 {
-  width: 0.5rem;
-}
-
-.w-28 {
-  width: 7rem;
+.w-1\/2 {
+  width: 50%;
 }
 
 .max-w-60 {
@@ -729,6 +743,30 @@ video {
 
 .max-w-screen-sm {
   max-width: 640px;
+}
+
+.max-w-0 {
+  max-width: 0px;
+}
+
+.max-w-screen-md {
+  max-width: 768px;
+}
+
+.max-w-20 {
+  max-width: 5rem;
+}
+
+.max-w-4 {
+  max-width: 1rem;
+}
+
+.max-w-44 {
+  max-width: 11rem;
+}
+
+.max-w-6 {
+  max-width: 1.5rem;
 }
 
 .appearance-none {
@@ -757,8 +795,20 @@ video {
   align-items: flex-start;
 }
 
+.items-end {
+  align-items: flex-end;
+}
+
 .items-center {
   align-items: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
 }
 
 .justify-center {
@@ -859,6 +909,11 @@ video {
      object-fit: contain;
 }
 
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .p-1 {
   padding: 0.25rem;
 }
@@ -906,6 +961,18 @@ video {
   padding-top: 1.5rem;
 }
 
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
+
+.pb-1 {
+  padding-bottom: 0.25rem;
+}
+
+.pt-5 {
+  padding-top: 1.25rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -948,4 +1015,40 @@ video {
 .hover\:bg-q-yellow-hover:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 214 153 / var(--tw-bg-opacity));
+}
+
+@media (min-width: 640px) {
+  .sm\:visible {
+    visibility: visible;
+  }
+
+  .sm\:invisible {
+    visibility: hidden;
+  }
+
+  .sm\:block {
+    display: block;
+  }
+
+  .sm\:flex {
+    display: flex;
+  }
+
+  .sm\:hidden {
+    display: none;
+  }
+
+  .sm\:max-w-60 {
+    max-width: 15rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:visible {
+    visibility: visible;
+  }
+
+  .md\:block {
+    display: block;
+  }
 };
