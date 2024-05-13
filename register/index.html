@@ -19,7 +19,7 @@
         </div>
         <div class="landing-form mx-auto flex flex-col flex-wrap justify-center content-center max-w-screen-lg w-full">
           <div class="landing-login w-10/12 max-w-80">
-            <form class="flex flex-col flex-wrap" action="../feed/index.html">
+            <form class="flex flex-col flex-wrap" id="registerForm" action="../feed/index.html">
               <label for="username">Username</label>
               <input class="h-10 rounded-md  px-2" type="text" id="username"  autofocus="autofocus">
               <label class="mt-4" for="email">Email</label>
@@ -31,15 +31,15 @@
               </div>
               <div class="mt-8 flex flex-col items-start gap-1 bg-highlight-hover p-2 rounded-lg ">
                 <div class="flex flex-row justify-center items-center gap-2">
-                  <div class="border-2 w-4 h-4 rounded-full"></div>
+                  <div id="usernameCheck" class="border-2 w-4 h-4 rounded-full"></div>
                   <p class="text-sm">Username must not have any spaces</p>
                 </div>
                 <div class="flex flex-row justify-center items-center gap-2">
-                  <div class="border-2 w-4 h-4 rounded-full"></div>
+                  <div id="emailCheck" class="border-2 w-4 h-4 rounded-full"></div>
                   <p class="text-sm">Email must be a valid noroff mail</p>
                 </div>
                 <div class="flex flex-row justify-center items-center gap-2">
-                  <div class="border-2 w-4 h-4 rounded-full"></div>
+                  <div id="passwordCheck" class="border-2 w-4 h-4 rounded-full"></div>
                   <p class="text-sm">Password must contain min 8 characters</p>
                 </div>
               </div>
@@ -50,6 +50,7 @@
           </div>
         </div>
       </div>
-      <script type="module" src="./dist/script.mjs"></script>
+      <!-- <script type="module" src="../dist/script.mjs"></script> -->
+      <script type="module" src="../dist/script.mjs"></script>
     </body>
 </html>
