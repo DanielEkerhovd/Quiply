@@ -19,15 +19,15 @@
         </div>
         <div class="landing-form mx-auto flex flex-col flex-wrap justify-center content-center max-w-screen-lg w-full">
           <div class="landing-login w-10/12 max-w-80">
-            <form class="flex flex-col flex-wrap" action="./feed/index.html">
+            <form id="loginForm" class="flex flex-col flex-wrap" action="./feed/index.html">
               <label for="email">Email</label>
-              <input class="h-10 rounded-md  px-2" type="email" id="email"  autofocus="autofocus">
+              <input class="h-10 rounded-md  px-2" type="text" id="email"  autofocus="autofocus">
               <label class="mt-4" for="password">Password</label>
               <div class="login-password relative flex flex-col text-center w-full mx-auto">
                 <input class="block h-10 rounded-md px-2" type="password" id="password">
                 <button class="absolute top-0 end-0" type="button" id="show-password"><img class="h-10 p-1.5" id="password-toggle" src="/src/media/icons/eye-closed.png" alt="Toggle visibility button"></button>
               </div>
-              <div class="mt-8 flex flex-col gap-1 bg-highlight-hover p-2 rounded-lg">
+              <div id="errorContainer" class="mt-8 flex flex-col gap-1 bg-highlight-hover p-2 rounded-lg hidden">
                 <p>Hmm, seems like something went wrong.</p>
                 <div>Need help <a class="underline" href="#">recover your password?</a></div>
               </div>

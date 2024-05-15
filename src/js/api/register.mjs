@@ -1,5 +1,3 @@
-
-
 export default async function registerUser(urlPath, data) {
   
     try {
@@ -13,7 +11,6 @@ export default async function registerUser(urlPath, data) {
         };
 
         const response = await fetch(urlPath, payload);
-        console.log(response);
         const results = await response.json();
         return results;
     }

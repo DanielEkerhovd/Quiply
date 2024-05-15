@@ -14,12 +14,12 @@
     
       <div class="landing-content flex flex-col h-full justify-between content-center w-full">
 
-        <div class="landing-hero bg-highlight h-80 flex justify-center p-10 rounded-b-lg">
+        <div class="landing-hero bg-highlight h-60 flex justify-center p-10 rounded-b-lg">
           <img class="object-contain" src="/src/media/logos/LogoWText.png" alt="Quiply logo">
         </div>
-        <div class="landing-form mx-auto flex flex-col flex-wrap justify-center content-center max-w-screen-lg w-full">
+        <div class="landing-form mt-2 mx-auto flex flex-col flex-wrap justify-center content-center max-w-screen-lg w-full">
           <div class="landing-login w-10/12 max-w-80">
-            <form class="flex flex-col flex-wrap" id="registerForm" action="../feed/index.html">
+            <form class="flex flex-col flex-wrap" id="registerForm" action="">
               <label for="username">Username</label>
               <input class="h-10 rounded-md  px-2" type="text" id="username"  autofocus="autofocus">
               <label class="mt-4" for="email">Email</label>
@@ -29,10 +29,14 @@
                 <input class="block h-10 rounded-md px-2" type="password" id="password">
                 <button class="absolute top-0 end-0" type="button" id="show-password"><img class="h-10 p-1.5" id="password-toggle" src="/src/media/icons/eye-closed.png" alt="Toggle visibility button"></button>
               </div>
+              <div id="registerErrorContainer" class="mt-8 gap-1 bg-highlight-hover p-2 rounded-lg hidden">
+                <p>Oops! Something went wrong...</p>
+                <p>I think you should try again!</p>
+              </div>
               <div class="mt-8 flex flex-col items-start gap-1 bg-highlight-hover p-2 rounded-lg ">
                 <div class="flex flex-row justify-center items-center gap-2">
-                  <div id="usernameCheck" class="border-2 w-4 h-4 rounded-full"></div>
-                  <p class="text-sm">Username must not have any spaces</p>
+                  <div id="usernameCheck" class="border-2 size-4 rounded-full"></div>
+                  <p class="text-sm">Username must not have any spaces<br>and be min 5 characters</p>
                 </div>
                 <div class="flex flex-row justify-center items-center gap-2">
                   <div id="emailCheck" class="border-2 w-4 h-4 rounded-full"></div>
@@ -44,10 +48,13 @@
                 </div>
               </div>
               <div class="flex flex-col text-center w-full max-w-60 mx-auto mb-20">
-                <button class="bg-q-yellow hover:bg-q-yellow-hover rounded-lg h-12 font-medium text-lg mt-8" type="submit">Register</button>
+                <button id="registerButton" class="bg-q-yellow hover:bg-q-yellow-hover rounded-lg h-12 font-medium text-lg mt-8" type="submit">Register</button>
               </div>
             </form>
           </div>
+        </div>
+        <div class="flex flex-col mx-auto">
+          <p>Already have an account? <a class="underline" href="../index.html">Log in</a></p>
         </div>
       </div>
       <!-- <script type="module" src="../dist/script.mjs"></script> -->
