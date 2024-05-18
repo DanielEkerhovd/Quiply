@@ -1,7 +1,5 @@
 export default function createPost(data) {
 
-
-
     const post = document.createElement('article');
     post.classList.add('flex', 'flex-col', 'gap-2');
 
@@ -17,7 +15,7 @@ export default function createPost(data) {
     postProfileImage.appendChild(postProfileImageElement);
 
     const postUsername = document.createElement('h2');
-    postUsername.innerHTML = 'Profile Name';
+    postUsername.innerHTML = data.author.name;
     postBio.append(postProfileImage, postUsername);
 
     const postContent = document.createElement('div');

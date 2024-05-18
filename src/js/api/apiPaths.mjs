@@ -13,5 +13,5 @@ export const apiPaths = {
    // Filtering: GET and use of tag. Example: posts?_tag=<tag>
 
    postFilter: `_tag=${quiplyTag}`,
-   postAuthur: `_author`
+   postAuthur: `_author=true`
 };

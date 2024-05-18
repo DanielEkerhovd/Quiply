@@ -14,7 +14,10 @@ export default async function fetchPosts(data) {
             body: JSON.stringify(data)
         };
 
-        const response = await fetch(`${baseURL}${apiPaths.posts}?${apiPaths.postFilter}&${apiPaths.postAuthur}`, payload);
+        const urlPath = `${baseURL}${apiPaths.posts}?${apiPaths.postFilter}&${apiPaths.postAuthur}`;
+        console.log(urlPath);
+
+        const response = await fetch(urlPath, payload);
         const results = await response.json();
         return results;
 
