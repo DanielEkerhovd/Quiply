@@ -4,6 +4,8 @@ import showPassword from "../src/js/forms/showPassword.js";
 import createNewUser from "../src/js/eventListeners/registerUser.mjs";
 import loginUser from "../src/js/eventListeners/loginUser.mjs";
 import validateForm from "../src/js/forms/validateFormVisuals.mjs";
+import fetchPostData from "../src/js/eventListeners/postData.mjs";
+import createFeed from "../src/js/posts/createFeed.mjs";
 
 switch (window.location.pathname) {
 
@@ -23,6 +25,16 @@ switch (window.location.pathname) {
     showPassword('#password', '#show-password', '#password-toggle', '../src/media/icons/eye-open.png', '../src/media/icons/eye-closed.png');
     createNewUser();
     validateForm();
+
+    break;
+
+    case '/feed/index.html':
+    case '/feed/':
+
+    console.log('Feed page');
+
+    fetchPostData();
+    createFeed();
 
     break;
 };

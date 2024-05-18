@@ -56,13 +56,16 @@
                 <!-- Create new post -->
                 <div class="flex items-start gap-5 border-2 rounded-lg w-11/12 max-w-screen-sm p-4">
                     <img class="h-20 hidden sm:block mt-5" src="/src/media/profile-image.png" alt="Profile image">
-                    <form class="flex flex-col items-end w-full p-5 gap-4" action="">
-                        <textarea class="h-20 rounded-lg px-4 py-2 w-full" id="newPost" type="text" placeholder="What's the latest?"></textarea> 
+                    <form id="postForm" class="flex flex-col items-end w-full p-5 gap-4" action="">
+                        <textarea class="h-20 rounded-lg px-4 py-2 w-full" id="postContent" type="text" placeholder="What's the latest?"></textarea> 
+                        <div id="postErrorContainer">
+                            <p class="hidden" id="postError">Something went wrong, try again!</p>
+                        </div>
                         <button class="bg-highlight rounded-lg h-10 sm:max-w-60 w-full" id="newPostButton" type="submit">Post</button>
                     </form>
                 </div>
                 <!-- Posts -->
-                <div class="flex flex-col w-11/12 max-w-screen-sm gap-4 my-8">
+                <div id="feedContent" class="flex flex-col w-11/12 max-w-screen-sm gap-4 my-8">
                     <!-- Example post -->
 
                     <div class="flex flex-col gap-2">
@@ -86,51 +89,11 @@
                         </div>
                     </div>
 
-                    <div class="flex flex-col gap-2">
-                        <div class="flex items-end gap-1">
-                            <a href="#"><img class="size-12 sm:hidden" src="/src/media/profile-image.png" alt=""></a>
-                            <h2 class="">DanielEker</h2>
-                        </div>
-                        <div class="flex items-center gap-5 border-2 rounded-sm p-4">
-                            <img class="h-16  hidden sm:block" src="/src/media/profile-image.png" alt="">
-                            <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <div class="flex items-center gap-2">
-                                <button id="likeButton" class="h-8 rounded-full"><img class="h-full " src="/src/media/icons/heart-empty.png" alt="like button"></button>
-                                <p class="font-lato" id="likeButtonValue">200</p>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <button id="commentButton" class="h-8 rounded-full"><img class="h-full " src="/src/media/icons/comment.png" alt="like button"></button>
-                                <p class="font-lato" id="commentButtonValue">32</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col gap-2">
-                        <div class="flex items-end gap-1">
-                            <a href="#"><img class="size-12 sm:hidden" src="/src/media/profile-image.png" alt=""></a>
-                            <h2 class="">DanielEker</h2>
-                        </div>
-                        <div class="flex items-center gap-5 border-2 rounded-sm p-4">
-                            <img class="h-16  hidden sm:block" src="/src/media/profile-image.png" alt="">
-                            <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <div class="flex items-center gap-2">
-                                <button id="likeButton" class="h-8 rounded-full"><img class="h-full " src="/src/media/icons/heart-empty.png" alt="like button"></button>
-                                <p class="font-lato" id="likeButtonValue">200</p>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <button id="commentButton" class="h-8 rounded-full"><img class="h-full " src="/src/media/icons/comment.png" alt="like button"></button>
-                                <p class="font-lato" id="commentButtonValue">32</p>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </main>
       
-      <script type="module" src=""></script>
+      <script type="module" src="../dist/script.mjs"></script>
     </body>
 </html>
