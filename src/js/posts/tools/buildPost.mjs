@@ -1,4 +1,19 @@
+import postDropdown from "../../eventListeners/postDropdown.mjs";
+import postDelete from "../../eventListeners/postDelete.mjs";
+
 export default function createPost(data) {
+
+    //Counts the post index
+    const postCount = document.querySelectorAll('article').length + 1;
+    const postId = data.id;
+    console.log(postCount, postId);
+
+    //Fetch user from local storage
+    const user = JSON.parse(localStorage.getItem('user'));
+    const userName = user.name;
+
+    //Fetch user that created post
+    const postAuthor = data.author.name;
 
     const post = document.createElement('article');
     post.classList.add('flex', 'flex-col', 'gap-2');
@@ -31,9 +46,11 @@ export default function createPost(data) {
 
     postContent.append(postImage, postText);
 
+    //Post stats
     const postStats = document.createElement('div');
     postStats.classList.add('flex', 'items-center', 'gap-2');
 
+    //Post likes
     const postLikes = document.createElement('div');
     postLikes.classList.add('flex', 'items-center', 'gap-2');
 
@@ -49,10 +66,11 @@ export default function createPost(data) {
     const postLikeValue = document.createElement('p');
     postLikeValue.classList.add('font-lato');
     postLikeValue.id = 'likeButtonValue';
-    postLikeValue.innerHTML = '200';
+    postLikeValue.innerHTML = '0';
     
     postLikes.append(postLikeButton, postLikeValue);
 
+    //Post comments
     const postComments = document.createElement('div');
     postComments.classList.add('flex', 'items-center', 'gap-2');
 
@@ -68,16 +86,72 @@ export default function createPost(data) {
     const postCommentValue = document.createElement('p');
     postCommentValue.classList.add('font-lato');
     postCommentValue.id = 'commentButtonValue';
-    postCommentValue.innerHTML = '32';
+    postCommentValue.innerHTML = '0';
 
     postComments.append(postCommentButton, postCommentValue);
     postStats.append(postLikes, postComments);
+
+    //Post menu
+
+    if (userName === postAuthor) {
+
+    const postMenu = document.createElement('div');
+    postMenu.classList.add('relative');
+
+    const postMenuButton = document.createElement('button');
+    postMenuButton.id = `postMenu${postCount}`;
+    postMenuButton.classList.add('size-8', 'flex');
+    postMenuButton.type = 'button';
+    const postMenuButtonImage = document.createElement('img');
+    postMenuButtonImage.src = '/src/media/icons/menu-dots.png';
+    postMenuButtonImage.alt = 'Dropdown menu';
+    postMenuButton.appendChild(postMenuButtonImage);
+
+    const postMenuDropdown = document.createElement('div');
+    postMenuDropdown.id = `postMenuDropdown${postCount}`;
+    postMenuDropdown.classList.add('absolute', 'hidden');
+
+    const postMenuDropdownList = document.createElement('ul');
+    postMenuDropdownList.classList.add('bg-white', 'shadow-lg', 'rounded', 'border', 'py-2');
+
+    const postMenuDropdownEdit = document.createElement('li');
+    postMenuDropdownEdit.classList.add('px-4', 'py-2', 'hover:bg-gray-200', 'cursor-pointer');
+    postMenuDropdownEdit.innerHTML = 'Edit';
+
+    const postMenuDropdownDelete = document.createElement('li');
+    postMenuDropdownDelete.classList.add('px-4', 'py-2', 'hover:bg-gray-200', 'cursor-pointer');
+    postMenuDropdownDelete.innerHTML = 'Delete';
+    const deleteButtonId = `deletePost${postCount}`
+    postMenuDropdownDelete.id = deleteButtonId;
+
+    postMenuDropdownList.append(postMenuDropdownEdit, postMenuDropdownDelete);
+    postMenuDropdown.append(postMenuDropdownList);
+    postMenu.append(postMenuButton, postMenuDropdown);
+    postStats.append(postMenu);
+
+    postDropdown(postMenuButton, postMenuDropdown);
+    postDelete(postMenuDropdownDelete, postId);
+    
+
+    };
 
     post.append(postBio, postContent, postStats);
 
     return post;
 
 }
+
+{/* <div class="relative">
+    <button id="postMenu" class="size-8 flex" type="button">
+        <img src="/src/media/icons/menu-dots.png" alt="Dropdown menu">
+    </button>
+    <div id="postMenuDropdown" class="absolute hidden">
+        <ul class="bg-white shadow-lg rounded border py-2">
+            <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer">Edit</li>
+            <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer">Delete</li>
+        </ul>
+    </div>
+</div> */}
 
 // <!-- <div class="flex flex-col gap-2">
 //         <div class="flex items-end gap-1">

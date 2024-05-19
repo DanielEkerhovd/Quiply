@@ -77,7 +77,7 @@
                             <img class="h-16  hidden sm:block" src="/src/media/profile-image.png" alt="">
                             <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         </div>
-                        <div class="flex items-center gap-2">
+                        <div class="flex justify-start items-center gap-2">
                             <div class="flex items-center gap-2">
                                 <button id="likeButton" class="h-8 rounded-full"><img class="h-full " src="/src/media/icons/heart-empty.png" alt="like button"></button>
                                 <p class="font-lato" id="likeButtonValue">200</p>
@@ -85,6 +85,17 @@
                             <div class="flex items-center gap-2">
                                 <button id="commentButton" class="h-8 rounded-full"><img class="h-full " src="/src/media/icons/comment.png" alt="like button"></button>
                                 <p class="font-lato" id="commentButtonValue">32</p>
+                            </div>
+                            <div class="relative">
+                                <button id="postMenu" class="size-8 flex" type="button">
+                                    <img src="/src/media/icons/menu-dots.png" alt="Dropdown menu">
+                                </button>
+                                <div id="postMenuDropdown" class="absolute hidden">
+                                    <ul class="bg-white shadow-lg rounded border py-2">
+                                        <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer">Edit</li>
+                                        <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer">Delete</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>

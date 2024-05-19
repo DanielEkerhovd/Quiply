@@ -12,7 +12,16 @@ export default async function login(urlPath, data) {
 
         const response = await fetch(urlPath, payload);
         const results = await response.json();
+
+        const user = {
+            name: results.name,
+            email: results.email,
+            id: results.id
+        };
+
         const token = results.accessToken;
+
+        localStorage.setItem('user', JSON.stringify(user));
         localStorage.setItem('accessToken', token);
 
         return results;
