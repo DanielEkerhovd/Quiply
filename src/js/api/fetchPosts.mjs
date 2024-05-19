@@ -15,7 +15,6 @@ export default async function fetchPosts(data) {
         };
 
         const urlPath = `${baseURL}${apiPaths.posts}?${apiPaths.postFilter}&${apiPaths.postAuthur}`;
-        console.log(urlPath);
 
         const response = await fetch(urlPath, payload);
         const results = await response.json();

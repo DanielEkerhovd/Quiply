@@ -7,6 +7,7 @@ import validateForm from "../src/js/forms/validateFormVisuals.mjs";
 import fetchPostData from "../src/js/eventListeners/postData.mjs";
 import createFeed from "../src/js/posts/createFeed.mjs";
 import postDropdown from "../src/js/eventListeners/postDropdown.mjs";
+import updateCharacters from "../src/js/eventListeners/updateCharacters.mjs";
 
 switch (window.location.pathname) {
 
@@ -34,6 +35,7 @@ switch (window.location.pathname) {
     
     fetchPostData();
     createFeed();
+    updateCharacters();
     
     break;
 };

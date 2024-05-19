@@ -12,7 +12,7 @@ export default function postDelete(button, id) {
         deletePost(baseURL + posts, id);
         setTimeout(() => {
             createFeed();
-        }, 100);
+        }, 200);
 
     });
 

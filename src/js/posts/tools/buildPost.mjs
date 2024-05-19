@@ -1,12 +1,12 @@
 import postDropdown from "../../eventListeners/postDropdown.mjs";
 import postDelete from "../../eventListeners/postDelete.mjs";
+import postUpdate from "../../eventListeners/postUpdate.mjs";
 
 export default function createPost(data) {
 
     //Counts the post index
     const postCount = document.querySelectorAll('article').length + 1;
     const postId = data.id;
-    console.log(postCount, postId);
 
     //Fetch user from local storage
     const user = JSON.parse(localStorage.getItem('user'));
@@ -15,6 +15,8 @@ export default function createPost(data) {
     //Fetch user that created post
     const postAuthor = data.author.name;
 
+
+    //Create post
     const post = document.createElement('article');
     post.classList.add('flex', 'flex-col', 'gap-2');
 
@@ -117,6 +119,8 @@ export default function createPost(data) {
     const postMenuDropdownEdit = document.createElement('li');
     postMenuDropdownEdit.classList.add('px-4', 'py-2', 'hover:bg-gray-200', 'cursor-pointer');
     postMenuDropdownEdit.innerHTML = 'Edit';
+    const editButtonId = `editPost${postCount}`
+    postMenuDropdownEdit.id = editButtonId;
 
     const postMenuDropdownDelete = document.createElement('li');
     postMenuDropdownDelete.classList.add('px-4', 'py-2', 'hover:bg-gray-200', 'cursor-pointer');
@@ -129,47 +133,14 @@ export default function createPost(data) {
     postMenu.append(postMenuButton, postMenuDropdown);
     postStats.append(postMenu);
 
+    //Functions
     postDropdown(postMenuButton, postMenuDropdown);
+    postUpdate(postMenuDropdownEdit, post, postId, data);
     postDelete(postMenuDropdownDelete, postId);
-    
 
     };
 
     post.append(postBio, postContent, postStats);
 
     return post;
-
-}
-
-{/* <div class="relative">
-    <button id="postMenu" class="size-8 flex" type="button">
-        <img src="/src/media/icons/menu-dots.png" alt="Dropdown menu">
-    </button>
-    <div id="postMenuDropdown" class="absolute hidden">
-        <ul class="bg-white shadow-lg rounded border py-2">
-            <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer">Edit</li>
-            <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer">Delete</li>
-        </ul>
-    </div>
-</div> */}
-
-// <!-- <div class="flex flex-col gap-2">
-//         <div class="flex items-end gap-1">
-//             <a href="#"><img class="size-12 sm:hidden" src="/src/media/profile-image.png" alt=""></a>
-//             <h2 class="">DanielEker</h2>
-//         </div>
-//         <div class="flex items-center gap-5 border-2 rounded-sm p-4">
-//             <img class="h-16  hidden sm:block" src="/src/media/profile-image.png" alt="">
-//             <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-//         </div>
-//         <div class="flex items-center gap-2">
-//             <div class="flex items-center gap-2">
-//                 <button id="likeButton" class="h-8 rounded-full"><img class="h-full " src="/src/media/icons/heart-empty.png" alt="like button"></button>
-//                 <p class="font-lato" id="likeButtonValue">200</p>
-//             </div>
-//             <div class="flex items-center gap-2">
-//                 <button id="commentButton" class="h-8 rounded-full"><img class="h-full " src="/src/media/icons/comment.png" alt="like button"></button>
-//                 <p class="font-lato" id="commentButtonValue">32</p>
-//             </div>
-//         </div>
-//     </div> -->
+};

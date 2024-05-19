@@ -7,7 +7,6 @@ export default async function createFeed() {
     feed.innerHTML = '';
 
     const posts = await fetchPosts();
-    console.log(posts);
 
     posts.forEach(post => {
         const postElement = createPost(post);

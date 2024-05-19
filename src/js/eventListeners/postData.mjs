@@ -15,8 +15,10 @@ export default function fetchPostData() {
 
         if (postBodyContent.value.length > 0) {
             submitButton.disabled = false;
+            submitButton.classList.remove('bg-gray-300');
         } else {
             submitButton.disabled = true;
+            submitButton.classList.add('bg-gray-300');
         };
     });
 
