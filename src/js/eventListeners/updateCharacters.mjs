@@ -1,6 +1,6 @@
 const inputFieldBase = document.getElementById('postContent');
 
-export default function updateCharacters (textarea = inputFieldBase, counter = 'updateTextCount') {
+export default function updateCharacters (textarea = inputFieldBase, counter = 'postTextCount') {
 
     const inputField = textarea
     const counts = document.getElementById(counter);
