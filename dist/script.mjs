@@ -5,9 +5,12 @@ import createNewUser from "../src/js/eventListeners/registerUser.mjs";
 import loginUser from "../src/js/eventListeners/loginUser.mjs";
 import validateForm from "../src/js/forms/validateFormVisuals.mjs";
 import fetchPostData from "../src/js/eventListeners/postData.mjs";
+import fetchPosts from "../src/js/api/fetchPosts.mjs";
 import createFeed from "../src/js/posts/createFeed.mjs";
 import postDropdown from "../src/js/eventListeners/postDropdown.mjs";
 import updateCharacters from "../src/js/eventListeners/updateCharacters.mjs";
+import postSearch from "../src/js/eventListeners/postSearch.mjs";
+import postFilter from "../src/js/eventListeners/postFilter.mjs";
 
 switch (window.location.pathname) {
 
@@ -33,9 +36,14 @@ switch (window.location.pathname) {
     case '/feed/index.html':
     case '/feed/':
     
+    const feedPosts = await fetchPosts();
+
     fetchPostData();
     createFeed();
     updateCharacters();
+    postSearch(feedPosts);
+    postFilter(feedPosts);
+
     
     break;
 };

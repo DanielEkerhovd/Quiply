@@ -13,15 +13,14 @@ export default function postSearch(data) {
         const feed = document.querySelector('#feedContent');
         feed.innerHTML = '';
 
-        //Filter objects from data with the search query in the body and create a new array
-        const searchResults = data.filter(post => post.body.includes(searchQuery));
+        //This checks for the search query in the post body and author name
+        const searchResults = data.filter(post => {
+            return post.body.toLowerCase().includes(searchQuery.toLowerCase()) || post.author.name.toLowerCase().includes(searchQuery.toLowerCase());
+        });
 
-        //Create feed with the search results
         searchResults.forEach(post => {
             const postElement = createPost(post);
             feed.appendChild(postElement);
         });
-
     });
-
 }

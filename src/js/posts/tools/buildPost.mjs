@@ -1,6 +1,7 @@
 import postDropdown from "../../eventListeners/postDropdown.mjs";
 import postDelete from "../../eventListeners/postDelete.mjs";
 import postUpdate from "../../eventListeners/postUpdate.mjs";
+import dateFormat from "../../utilities/dateFormat.mjs";
 
 export default function createPost(data) {
 
@@ -31,9 +32,19 @@ export default function createPost(data) {
     postProfileImageElement.alt = '';
     postProfileImage.appendChild(postProfileImageElement);
 
+    const postTitles = document.createElement('div');
+    postTitles.classList.add('flex', 'flex-col', 'items-start', 'gap-1');
+
     const postUsername = document.createElement('h2');
     postUsername.innerHTML = data.author.name;
-    postBio.append(postProfileImage, postUsername);
+
+    const postDate = document.createElement('p');
+    postDate.classList.add('text-black/[.60]', 'text-xs');
+    postDate.innerHTML = dateFormat(data.updated, true);
+
+    postTitles.append(postUsername, postDate);
+
+    postBio.append(postProfileImage, postTitles);
 
     const postContent = document.createElement('div');
     postContent.classList.add('flex', 'items-center', 'gap-5', 'border-2', 'rounded-sm', 'p-4');
