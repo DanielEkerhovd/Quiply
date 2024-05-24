@@ -21,9 +21,10 @@ export default async function login(urlPath, data) {
 
         const token = results.accessToken;
 
-        localStorage.setItem('user', JSON.stringify(user));
-        localStorage.setItem('accessToken', token);
-
+        if (token) {
+            localStorage.setItem('user', JSON.stringify(user));
+            localStorage.setItem('accessToken', token);
+        }
         return results;
     }
 

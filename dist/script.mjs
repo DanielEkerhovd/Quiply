@@ -24,9 +24,11 @@ switch (window.location.pathname) {
     case '/index.html':
 
     authenticated = await loggedIn();
-    if (authenticated) {
-        window.location.href = '/feed/';
-    }
+    console.log(authenticated);
+   
+    // if (authenticated) {
+    //     window.location.href = '/feed/';
+    // }
 
     showPassword('#password', '#show-password', '#password-toggle', './src/media/icons/eye-open.png', './src/media/icons/eye-closed.png');    
     loginUser();

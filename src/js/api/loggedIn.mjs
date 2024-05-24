@@ -17,9 +17,11 @@ export default async function loggedIn() {
             return true;
 
         } catch (error) {
+            console.log(error);
             return false;
         }
     } else {
+        console.log('No token found');
         return false;
     }
 }
