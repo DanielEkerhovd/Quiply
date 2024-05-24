@@ -34,7 +34,7 @@ export default function fetchPostData() {
 
         await newPost(data);
         form.reset();
-        createFeed();
+        location.reload();
 
     });
 

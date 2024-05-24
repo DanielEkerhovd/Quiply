@@ -12,11 +12,21 @@ import updateCharacters from "../src/js/eventListeners/updateCharacters.mjs";
 import postSearch from "../src/js/eventListeners/postSearch.mjs";
 import postFilter from "../src/js/eventListeners/postFilter.mjs";
 import createSinglePost from "../src/js/posts/createSinglePost.mjs";
+import loggedIn from "../src/js/api/loggedIn.mjs";
+import logOut from "../src/js/utilities/logout/logOut.mjs";
+import logOutEvent from "../src/js/utilities/logout/logOutEvent.mjs";
+
+let authenticated = false
 
 switch (window.location.pathname) {
 
     case '/':
     case '/index.html':
+
+    authenticated = await loggedIn();
+    if (authenticated) {
+        window.location.href = '/feed/';
+    }
 
     showPassword('#password', '#show-password', '#password-toggle', './src/media/icons/eye-open.png', './src/media/icons/eye-closed.png');    
     loginUser();
@@ -26,7 +36,10 @@ switch (window.location.pathname) {
     case '/register/index.html':
     case '/register/':
 
-    console.log('Register page');
+    authenticated = await loggedIn();
+    if (authenticated) {
+        window.location.href = '/feed/';
+    }
 
     showPassword('#password', '#show-password', '#password-toggle', '../src/media/icons/eye-open.png', '../src/media/icons/eye-closed.png');
     createNewUser();
@@ -36,9 +49,17 @@ switch (window.location.pathname) {
 
     case '/feed/index.html':
     case '/feed/':
+
+    authenticated = await loggedIn();
+
+    if (!authenticated) {
+        logOut();
+    }
+    
     
     const feedPosts = await fetchPosts();
 
+    logOutEvent();
     fetchPostData();
     createFeed();
     updateCharacters();
@@ -50,5 +71,8 @@ switch (window.location.pathname) {
     case '/post/index.html':
     case '/post/':
 
+    logOutEvent();
     createSinglePost();
+
+    break;
 };

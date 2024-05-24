@@ -35,7 +35,7 @@ export default function createPost(data, singlePost = false) {
     const postTitles = document.createElement('div');
     postTitles.classList.add('flex', 'flex-col', 'items-start', 'gap-1');
 
-    const postUsername = document.createElement('h2');
+    const postUsername = document.createElement('h1');
     postUsername.innerHTML = data.author.name;
 
     const postDate = document.createElement('p');

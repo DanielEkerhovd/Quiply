@@ -13,4 +13,12 @@
     :focus {
         @apply outline-none;
     }
+
+    h1 {
+        @apply text-xl font-bold font-lato;
+    }
+
+    h2 {
+        @apply text-lg font-bold font-lato;
+    }
 };

@@ -38,6 +38,8 @@ export default function postFilter(data) {
                         filteredByDate.push(post);
                     }
                 });
+
+                filteredByDate.sort(() => Math.random() - 0.5);
                 
                 filteredByDate.forEach(post => {
                     const postElement = createPost(post);

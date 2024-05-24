@@ -17,22 +17,27 @@
                     <a href="../feed/index.html"><img class="h-full" src="/src/media/logos/quiply-logo.png" alt="Quiply logo"></a>
                 </div>
                 <nav class="justify-self-center hidden sm:block">
-                    <ul class="flex flex-row gap-4">
-                        <li><a href="#">Quips</a></li>
+                    <ul class="flex flex-row gap-4 font-semibold">
+                        <li><a href="/feed/index.html">Home</a></li>
                         <li><a href="#">Explore</a></li>
-                        <li><a href="#">Profile</a></li>
+                        <li><a href="/faq/index.html">FAQ</a></li>
                     </ul>
                 </nav>
                 <div class="flex items-center gap-4">
                     <div class="hamburger sm:hidden">
                         <img class="size-10" src="/src/media/icons/hamburger.png" alt="">
                     </div>
-                    <div class="h-8 p-1 bg-q-yellow rounded-full hidden sm:block">
-                        <img class="h-full ml-0.5" src="/src/media/icons/notification-live.png" alt="Notification">
-                    </div>
                     <a href="../profile/index.html">
                         <img class="h-10" src="/src/media/profile-image.png" alt="Profile page link">
                     </a>
+                    <div class="relative">
+                        <button type="submit" class="size-9 p-1 bg-q-yellow rounded-full block">
+                            <img id="logOutMenuButton" src="/src/media/icons/logout.png" alt="">
+                        </button>
+                        <div id="logOutMenu" class="absolute hidden h-10 w-20 bg-q-yellow rounded-lg p-2 border-2 right-0 mt-2 border-black">
+                            <button id="logOutButton">Log out</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </header>

@@ -17,31 +17,36 @@
                     <a href="../feed/index.html"><img class="h-full" src="/src/media/logos/quiply-logo.png" alt="Quiply logo"></a>
                 </div>
                 <nav class="justify-self-center hidden sm:block">
-                    <ul class="flex flex-row gap-4">
-                        <li><a href="#">Quips</a></li>
+                    <ul class="flex flex-row gap-4 font-semibold">
+                        <li><a href="/feed/index.html">Home</a></li>
                         <li><a href="#">Explore</a></li>
-                        <li><a href="#">Profile</a></li>
+                        <li><a href="/faq/index.html">FAQ</a></li>
                     </ul>
                 </nav>
                 <div class="flex items-center gap-4">
                     <div class="hamburger sm:hidden">
                         <img class="size-10" src="/src/media/icons/hamburger.png" alt="">
                     </div>
-                    <div class="h-8 p-1 bg-q-yellow rounded-full hidden sm:block">
-                        <img class="h-full ml-0.5" src="/src/media/icons/notification-live.png" alt="Notification">
-                    </div>
                     <a href="../profile/index.html">
                         <img class="h-10" src="/src/media/profile-image.png" alt="Profile page link">
                     </a>
+                    <div class="relative">
+                        <button type="submit" class="size-9 p-1 bg-q-yellow rounded-full block">
+                            <img id="logOutMenuButton" src="/src/media/icons/logout.png" alt="">
+                        </button>
+                        <div id="logOutMenu" class="absolute hidden h-10 w-20 bg-q-yellow rounded-lg p-2 border-2 right-0 mt-2 border-black">
+                            <button id="logOutButton">Log out</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </header>
-        <main class=" bg-highlight">
+        <main class=" bg-background">
             <!-- Content -->
-            <div class="mx-auto w-full max-w-screen-lg bg-background flex flex-col items-center gap-2 pt-6">
-                <div class="search-filter flex justify-between border-2 gap-4 flex-wrap w-11/12 max-w-screen-sm p-4 rounded-lg">
+            <div class="mx-auto w-11/12 max-w-screen-lg flex flex-col items-center gap-2 pt-6">
+                <div class="search-filter flex justify-between border-2 gap-4 flex-wrap w-full max-w-screen-sm p-4 rounded-lg">
                     <!-- Search and filter -->
-                    <form id="filterForm" class="dropdown-filter w-24 border-2 rounded-lg">
+                    <form id="filterForm" class="dropdown-filter w-24 border-2 rounded-lg ">
                         <select id="filterFormSelect" class="w-full h-9 p-2 bg-[url('/src/media/icons/filter.png')] bg-right bg-contain bg-no-repeat appearance-none bg-transparent" name="feed-filter" id="feedFilter">
                             <option value="newest">Newest</option>
                             <option value="today">Today</option>
@@ -54,7 +59,7 @@
                     </form>
                 </div>
                 <!-- Create new post -->
-                <div class="flex items-start gap-5 border-2 rounded-lg w-11/12 max-w-screen-sm p-4">
+                <div class="flex items-start gap-5 border-2 rounded-lg w-full max-w-screen-sm p-4">
                     <img class="h-20 hidden sm:block mt-5" src="/src/media/profile-image.png" alt="Profile image">
                     <form id="postForm" class="flex flex-col items-end w-full p-5 gap-4" action="">
                         <div class="w-full h-24 relative">
@@ -66,11 +71,11 @@
                         <div id="postErrorContainer">
                             <p class="hidden" id="postError">Something went wrong, try again!</p>
                         </div>
-                        <button class="bg-highlight rounded-lg h-10 sm:max-w-60 w-full" id="newPostButton" type="submit">Post</button>
+                        <button class="bg-highlight rounded-lg h-10 sm:max-w-60 w-full font-semibold" id="newPostButton" type="submit">Post</button>
                     </form>
                 </div>
                 <!-- Posts -->
-                <div id="feedContent" class="flex flex-col w-11/12 max-w-screen-sm gap-8 my-8">
+                <div id="feedContent" class="flex flex-col w-full max-w-screen-sm gap-8 my-8">
                     <!-- Example post -->
 
                     <div role="status mx-auto">
