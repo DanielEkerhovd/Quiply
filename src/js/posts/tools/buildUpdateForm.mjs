@@ -69,9 +69,14 @@ export function buildUpdateForm(post, data) {
         };
 
         const updatedPost = await updatePost(updatedData, data.id);
+        const currentURL = window.location.href;
 
         setTimeout(() => {
+            if (currentURL.includes('post')) {
+                location.reload();
+            } else {
             createFeed();
+            }
         }, 100);
 
     });

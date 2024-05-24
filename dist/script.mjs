@@ -11,6 +11,7 @@ import postDropdown from "../src/js/eventListeners/postDropdown.mjs";
 import updateCharacters from "../src/js/eventListeners/updateCharacters.mjs";
 import postSearch from "../src/js/eventListeners/postSearch.mjs";
 import postFilter from "../src/js/eventListeners/postFilter.mjs";
+import createSinglePost from "../src/js/posts/createSinglePost.mjs";
 
 switch (window.location.pathname) {
 
@@ -44,6 +45,10 @@ switch (window.location.pathname) {
     postSearch(feedPosts);
     postFilter(feedPosts);
 
-    
     break;
+
+    case '/post/index.html':
+    case '/post/':
+
+    createSinglePost();
 };

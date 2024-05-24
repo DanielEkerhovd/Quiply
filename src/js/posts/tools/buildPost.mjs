@@ -3,7 +3,7 @@ import postDelete from "../../eventListeners/postDelete.mjs";
 import postUpdate from "../../eventListeners/postUpdate.mjs";
 import dateFormat from "../../utilities/dateFormat.mjs";
 
-export default function createPost(data) {
+export default function createPost(data, singlePost = false) {
 
     //Counts the post index
     const postCount = document.querySelectorAll('article').length + 1;
@@ -43,8 +43,9 @@ export default function createPost(data) {
     postDate.innerHTML = dateFormat(data.updated, true);
 
     postTitles.append(postUsername, postDate);
-
     postBio.append(postProfileImage, postTitles);
+
+    //Content
 
     const postContent = document.createElement('div');
     postContent.classList.add('flex', 'items-center', 'gap-5', 'border-2', 'rounded-sm', 'p-4');
@@ -56,12 +57,15 @@ export default function createPost(data) {
 
     const postText = document.createElement('p');
     postText.innerHTML = data.body;
-
     postContent.append(postImage, postText);
 
     //Post stats
     const postStats = document.createElement('div');
-    postStats.classList.add('flex', 'items-center', 'gap-2');
+    postStats.classList.add('flex', 'justify-between', 'gap-2', 'rounded-sm');
+
+    //Post reactions
+    const postReactions = document.createElement('div');
+    postReactions.classList.add('flex', 'items-center', 'gap-2');
 
     //Post likes
     const postLikes = document.createElement('div');
@@ -80,8 +84,6 @@ export default function createPost(data) {
     postLikeValue.classList.add('font-lato');
     postLikeValue.id = 'likeButtonValue';
     postLikeValue.innerHTML = '0';
-    
-    postLikes.append(postLikeButton, postLikeValue);
 
     //Post comments
     const postComments = document.createElement('div');
@@ -101,8 +103,11 @@ export default function createPost(data) {
     postCommentValue.id = 'commentButtonValue';
     postCommentValue.innerHTML = '0';
 
+    postLikes.append(postLikeButton, postLikeValue);
     postComments.append(postCommentButton, postCommentValue);
-    postStats.append(postLikes, postComments);
+    postReactions.append(postLikes, postComments);
+    postStats.append(postReactions);
+
 
     //Post menu
 
@@ -122,7 +127,7 @@ export default function createPost(data) {
 
     const postMenuDropdown = document.createElement('div');
     postMenuDropdown.id = `postMenuDropdown${postCount}`;
-    postMenuDropdown.classList.add('absolute', 'hidden');
+    postMenuDropdown.classList.add('absolute', 'right-0', 'hidden');
 
     const postMenuDropdownList = document.createElement('ul');
     postMenuDropdownList.classList.add('bg-white', 'shadow-lg', 'rounded', 'border', 'py-2');
@@ -151,7 +156,14 @@ export default function createPost(data) {
 
     };
 
-    post.append(postBio, postContent, postStats);
+    if (!singlePost) {
+        const postContentLink = document.createElement('a');
+        postContentLink.href = `/post/?id=${postId}`;
+        postContentLink.appendChild(postContent);
+        post.append(postBio, postContentLink, postStats);
+    } else {
+        post.append(postBio, postContent, postStats);
+    }
 
     return post;
 };

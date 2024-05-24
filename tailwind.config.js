@@ -20,6 +20,9 @@ module.exports = {
         sans: ["Raleway", "sans-serif"],
         lato: ["Lato", "sans-serif"],
       },
+      borderColor: {
+        DEFAULT: '#FFD290',
+      }
   },
   plugins: [],
   }
