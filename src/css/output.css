@@ -651,6 +651,58 @@ h2 {
   top: 0px;
 }
 
+.left-0 {
+  left: 0px;
+}
+
+.left-2 {
+  left: 0.5rem;
+}
+
+.left-20 {
+  left: 5rem;
+}
+
+.left-5 {
+  left: 1.25rem;
+}
+
+.left-8 {
+  left: 2rem;
+}
+
+.top-8 {
+  top: 2rem;
+}
+
+.bottom-8 {
+  bottom: 2rem;
+}
+
+.top-5 {
+  top: 1.25rem;
+}
+
+.right-8 {
+  right: 2rem;
+}
+
+.right-5 {
+  right: 1.25rem;
+}
+
+.right-10 {
+  right: 2.5rem;
+}
+
+.right-6 {
+  right: 1.5rem;
+}
+
+.bottom-2 {
+  bottom: 0.5rem;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -744,6 +796,11 @@ h2 {
 .size-full {
   width: 100%;
   height: 100%;
+}
+
+.size-5 {
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 .h-10 {
@@ -975,6 +1032,19 @@ h2 {
   border-bottom-left-radius: 0.5rem;
 }
 
+.rounded-t-lg {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.rounded-br-lg {
+  border-bottom-right-radius: 0.5rem;
+}
+
+.rounded-bl-lg {
+  border-bottom-left-radius: 0.5rem;
+}
+
 .border {
   border-width: 1px;
 }
@@ -1191,7 +1261,23 @@ h2 {
   background-color: rgb(255 214 153 / var(--tw-bg-opacity));
 }
 
+.group:hover .group-hover\:block {
+  display: block;
+}
+
 @media (min-width: 640px) {
+  .sm\:left-8 {
+    left: 2rem;
+  }
+
+  .sm\:left-0 {
+    left: 0px;
+  }
+
+  .sm\:left-10 {
+    left: 2.5rem;
+  }
+
   .sm\:block {
     display: block;
   }
@@ -1202,6 +1288,21 @@ h2 {
 
   .sm\:max-w-60 {
     max-width: 15rem;
+  }
+
+  .sm\:rounded-t-lg {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+  }
+
+  .sm\:rounded-br-lg {
+    border-bottom-right-radius: 0.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:left-8 {
+    left: 2rem;
   }
 }
 

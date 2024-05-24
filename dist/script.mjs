@@ -26,9 +26,9 @@ switch (window.location.pathname) {
     authenticated = await loggedIn();
     console.log(authenticated);
    
-    // if (authenticated) {
-    //     window.location.href = '/feed/';
-    // }
+    if (authenticated) {
+        window.location.href = '/feed/';
+    }
 
     showPassword('#password', '#show-password', '#password-toggle', './src/media/icons/eye-open.png', './src/media/icons/eye-closed.png');    
     loginUser();
