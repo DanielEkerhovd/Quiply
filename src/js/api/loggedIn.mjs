@@ -14,7 +14,11 @@ export default async function loggedIn() {
 
             const posts = await response.json();
 
-            return true;
+            if (!response.ok) {
+                return false;
+            } else {
+                return true;
+            }
 
         } catch (error) {
             console.log(error);
