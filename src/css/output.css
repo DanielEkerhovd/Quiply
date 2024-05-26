@@ -659,6 +659,10 @@ h2 {
   top: 0px;
 }
 
+.left-0 {
+  left: 0px;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -813,6 +817,10 @@ h2 {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-5 {
+  height: 1.25rem;
 }
 
 .w-10\/12 {
@@ -1133,6 +1141,10 @@ h2 {
 
 .text-center {
   text-align: center;
+}
+
+.align-middle {
+  vertical-align: middle;
 }
 
 .font-lato {

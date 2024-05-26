@@ -10,6 +10,7 @@ export default function createPost(data, singlePost = false) {
     const postId = data.id;
 
     //Fetch user from local storage
+    //Dilema: If user adds an username to the local storage, they are able to edit the post of another user
     const user = JSON.parse(localStorage.getItem('user'));
     const userName = user.name;
 
@@ -129,7 +130,7 @@ export default function createPost(data, singlePost = false) {
 
     const postMenuDropdown = document.createElement('div');
     postMenuDropdown.id = `postMenuDropdown${postCount}`;
-    postMenuDropdown.classList.add('absolute', 'right-0', 'hidden');
+    postMenuDropdown.classList.add('absolute', 'left-0', 'hidden');
 
     const postMenuDropdownList = document.createElement('ul');
     postMenuDropdownList.classList.add('bg-white', 'shadow-lg', 'rounded', 'border', 'py-2');
