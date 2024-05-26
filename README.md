@@ -4,7 +4,7 @@ A social media application for quick comments and fun sentences.
 
 ## Description
 
-* Languages
+Languages
 
 - HTML
 - Tailwind (CSS)
@@ -15,18 +15,18 @@ A social media application for quick comments and fun sentences.
 
 ### Installing
 
-* Clone repo
+Clone repo
 ```
 gh repo clone DanielEkerhovd/Quiply
 ```
 
-* Install dependencies
+Install dependencies
 
 ```
 npm install
 ```
 
-* Run program
+Run program
 ```
 npm run dev
 ```
