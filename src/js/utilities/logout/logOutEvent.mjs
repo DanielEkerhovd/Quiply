@@ -8,7 +8,6 @@ export default function logOutEvent() {
 
     openMenu.addEventListener('click', () => {
         menu.classList.toggle('hidden');
-        console.log('open');
     });
     
     document.addEventListener('click', (event) => {

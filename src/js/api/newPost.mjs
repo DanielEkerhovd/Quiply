@@ -17,7 +17,7 @@ export default async function newPost(data) {
         const result = await response.json();
 
     } catch (error) {
-        console.log(error);
+        console.error(error);
     };
 
 }; 

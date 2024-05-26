@@ -63,50 +63,52 @@ export default function createPost(data, singlePost = false) {
     const postStats = document.createElement('div');
     postStats.classList.add('flex', 'justify-between', 'gap-2', 'rounded-sm');
 
-    //Post reactions
-    const postReactions = document.createElement('div');
-    postReactions.classList.add('flex', 'items-center', 'gap-2');
+    //Adding code back when i implemented the like and comment feature
 
-    //Post likes
-    const postLikes = document.createElement('div');
-    postLikes.classList.add('flex', 'items-center', 'gap-2');
+    // //Post reactions
+    // const postReactions = document.createElement('div');
+    // postReactions.classList.add('flex', 'items-center', 'gap-2');
 
-    const postLikeButton = document.createElement('button');
-    postLikeButton.id = 'likeButton';
-    postLikeButton.classList.add('h-8', 'rounded-full');
-    const postLikeButtonImage = document.createElement('img');
-    postLikeButtonImage.classList.add('h-full');
-    postLikeButtonImage.src = '/src/media/icons/heart-empty.png';
-    postLikeButtonImage.alt = 'like button';
-    postLikeButton.appendChild(postLikeButtonImage);
+    // //Post likes
+    // const postLikes = document.createElement('div');
+    // postLikes.classList.add('flex', 'items-center', 'gap-2');
 
-    const postLikeValue = document.createElement('p');
-    postLikeValue.classList.add('font-lato');
-    postLikeValue.id = 'likeButtonValue';
-    postLikeValue.innerHTML = '0';
+    // const postLikeButton = document.createElement('button');
+    // postLikeButton.id = 'likeButton';
+    // postLikeButton.classList.add('h-8', 'rounded-full');
+    // const postLikeButtonImage = document.createElement('img');
+    // postLikeButtonImage.classList.add('h-full');
+    // postLikeButtonImage.src = '/src/media/icons/heart-empty.png';
+    // postLikeButtonImage.alt = 'like button';
+    // postLikeButton.appendChild(postLikeButtonImage);
 
-    //Post comments
-    const postComments = document.createElement('div');
-    postComments.classList.add('flex', 'items-center', 'gap-2');
+    // const postLikeValue = document.createElement('p');
+    // postLikeValue.classList.add('font-lato');
+    // postLikeValue.id = 'likeButtonValue';
+    // postLikeValue.innerHTML = '0';
 
-    const postCommentButton = document.createElement('button');
-    postCommentButton.id = 'commentButton';
-    postCommentButton.classList.add('h-8', 'rounded-full');
-    const postCommentButtonImage = document.createElement('img');
-    postCommentButtonImage.classList.add('h-full');
-    postCommentButtonImage.src = '/src/media/icons/comment.png';
-    postCommentButtonImage.alt = 'comment button';
-    postCommentButton.appendChild(postCommentButtonImage);
+    // //Post comments
+    // const postComments = document.createElement('div');
+    // postComments.classList.add('flex', 'items-center', 'gap-2');
 
-    const postCommentValue = document.createElement('p');
-    postCommentValue.classList.add('font-lato');
-    postCommentValue.id = 'commentButtonValue';
-    postCommentValue.innerHTML = '0';
+    // const postCommentButton = document.createElement('button');
+    // postCommentButton.id = 'commentButton';
+    // postCommentButton.classList.add('h-8', 'rounded-full');
+    // const postCommentButtonImage = document.createElement('img');
+    // postCommentButtonImage.classList.add('h-full');
+    // postCommentButtonImage.src = '/src/media/icons/comment.png';
+    // postCommentButtonImage.alt = 'comment button';
+    // postCommentButton.appendChild(postCommentButtonImage);
 
-    postLikes.append(postLikeButton, postLikeValue);
-    postComments.append(postCommentButton, postCommentValue);
-    postReactions.append(postLikes, postComments);
-    postStats.append(postReactions);
+    // const postCommentValue = document.createElement('p');
+    // postCommentValue.classList.add('font-lato');
+    // postCommentValue.id = 'commentButtonValue';
+    // postCommentValue.innerHTML = '0';
+
+    // postLikes.append(postLikeButton, postLikeValue);
+    // postComments.append(postCommentButton, postCommentValue);
+    // postReactions.append(postLikes, postComments);
+    // postStats.append(postReactions);
 
 
     //Post menu

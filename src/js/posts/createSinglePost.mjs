@@ -8,7 +8,6 @@ export default async function createSinglePost() {
     const post = await fetchSinglePost(id);
     const postElement = buildPost(post, true);
     const container = document.querySelector('#postContent');
-    console.log(container);
     container.appendChild(postElement);
 
 };

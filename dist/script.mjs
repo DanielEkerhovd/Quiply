@@ -24,8 +24,6 @@ switch (window.location.pathname) {
     case '/index.html':
 
     authenticated = await loggedIn();
-    console.log(authenticated);
-   
     if (authenticated) {
         window.location.href = '/feed/';
     }
@@ -53,7 +51,6 @@ switch (window.location.pathname) {
     case '/feed/':
 
     authenticated = await loggedIn();
-
     if (!authenticated) {
         logOut();
     }
@@ -72,6 +69,11 @@ switch (window.location.pathname) {
 
     case '/post/index.html':
     case '/post/':
+
+    authenticated = await loggedIn();
+    if (!authenticated) {
+        logOut();
+    }
 
     logOutEvent();
     createSinglePost();

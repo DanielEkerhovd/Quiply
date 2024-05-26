@@ -40,7 +40,7 @@ export default function fetchPostData() {
 
 
     } catch (error) {
-        console.log(error);
+        console.error(error);
         errorContainer.classList.remove('hidden');
     };
 };

@@ -21,11 +21,11 @@ export default async function loggedIn() {
             }
 
         } catch (error) {
-            console.log(error);
+            console.error('Error:', error);
             return false;
         }
     } else {
-        console.log('No token found');
+        // No token
         return false;
     }
 }

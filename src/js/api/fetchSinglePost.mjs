@@ -14,8 +14,7 @@ export default async function fetchSinglePost(id) {
         };
 
         const urlPath = `${baseURL}${apiPaths.posts}/${id}?${apiPaths.postAuthur}`;
-        console.log(urlPath);
-
+        
         const response = await fetch(urlPath, payload);
         const results = await response.json();
         return results;
