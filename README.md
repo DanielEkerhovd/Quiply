@@ -35,8 +35,8 @@ npm run dev
 
 Contributors names and contact info
 
-ex. Daniel Ekerhovd Lid  
-ex. [@DanielEkerhovd](https://www.linkedin.com/in/daniel-ekerhovd/)
+Daniel Ekerhovd 
+[Linkedin](https://www.linkedin.com/in/daniel-ekerhovd/)
 
 ## Version History
 
