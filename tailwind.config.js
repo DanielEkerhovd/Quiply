@@ -8,7 +8,12 @@ module.exports = {
         'secondary': {
           100: '#E2E2D5',
           200: '#888883',
-        }
+        },
+        'background': '#BA9479',
+        'highlight': '#BC845D',
+        'highlight-hover': '#BE8C69',
+        'q-yellow': '#FFD290',
+        'q-yellow-hover': '#FFD699',
       },
       fontFamily: {
         sans: ["Raleway", "sans-serif"],
