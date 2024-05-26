@@ -10,6 +10,9 @@ Languages
 - Tailwind (CSS)
 - Javascript
 
+Trello board
+[Link](https://trello.com/invite/b/MybguHKr/ATTI7ffa759031fb88a247b565975870f724D01FF4BB/quiply)
+
 
 ## Getting Started
 
