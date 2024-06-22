@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Quiply is a platform for creating and sharing quizzes.">
+
+  <link rel="icon" href="/src/media/logos/quiply-logo.png" type="image/png">
+  <title>Quiply</title>
+
+  <link href="/dist/styles.css" rel="stylesheet">
+</head>
+    <body class="bg-background">
+        <header class="bg-highlight h-20 sticky top-0 z-10">
+            <div class="h-full flex flex-row justify-between items-center mx-auto w-11/12">
+                <div class="h-5/6">
+                    <a href="../feed/index.html"><img class="h-full" src="/src/media/logos/quiply-logo.png" alt="Quiply logo"></a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <a class="size-8 bg-q-yellow rounded-full flex justify-center items-center" href="/faq/index.html">
+                        <p class="font-bold">i</p>
+                    </a>
+                    <a href="../profile/index.html">
+                        <img class="h-10" src="/src/media/profile-image.png" alt="Profile page link">
+                    </a>
+                    <div class="relative">
+                        <button type="submit" class="size-9 p-1 bg-q-yellow rounded-full block">
+                            <img id="logOutMenuButton" src="/src/media/icons/logout.png" alt="">
+                        </button>
+                        <div id="logOutMenu" class="absolute hidden h-10 w-20 bg-q-yellow rounded-lg p-2 border-2 right-0 mt-2 border-black">
+                            <button id="logOutButton">Log out</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class=" bg-background">
+            <!-- Content -->
+            <div class="mx-auto w-11/12 max-w-screen-lg flex flex-col items-center gap-2 pt-6">
+                <div class="search-filter flex justify-between border-2 gap-4 flex-wrap w-full max-w-screen-sm p-4 rounded-lg">
+                    <!-- Search and filter -->
+                    <form id="filterForm" class="dropdown-filter w-24 border-2 rounded-lg ">
+                        <select id="filterFormSelect" class="w-full h-9 p-2 bg-[url('/src/media/icons/filter.png')] bg-right bg-contain bg-no-repeat appearance-none bg-transparent" name="feed-filter" id="feedFilter">
+                            <option value="newest">Newest</option>
+                            <option value="today">Today</option>
+                            <option value="oldest">Oldest</option>
+                        </select>
+                    </form>
+                    <form id="searchForm" class="search-bar flex gap-2 w-full max-w-96">
+                        <input id="searchInput" class="rounded-lg px-2 w-full" id="searchBar" type="text" placeholder="Search">
+                        <button class="size-10 p-2 rounded-lg bg-highlight" id="searchButton" type="submit"><img class="size-full object-contain" src="/src/media/icons/search.png" alt="Search icon"></button>
+                    </form>
+                </div>
+                <!-- Create new post -->
+                <div class="flex items-start gap-5 border-2 rounded-lg w-full max-w-screen-sm p-4">
+                    <img class="h-20 hidden sm:block mt-5" src="/src/media/profile-image.png" alt="Profile image">
+                    <form id="postForm" class="flex flex-col items-end w-full p-5 gap-4" action="">
+                        <div class="w-full h-24 relative">
+                            <textarea class="h-24 rounded-lg px-4 py-2 w-full resize-none" id="postContent" type="text" placeholder="What's the latest?"></textarea>
+                            <div class="absolute bottom-0 right-2">
+                                <p class="text-gray-600"><span id="postTextCount">0</span>/120</p>
+                            </div> 
+                        </div>
+                        <div id="postErrorContainer">
+                            <p class="hidden" id="postError">Something went wrong, try again!</p>
+                        </div>
+                        <button class="bg-highlight rounded-lg h-10 sm:max-w-60 w-full font-semibold" id="newPostButton" type="submit">Post</button>
+                    </form>
+                </div>
+                <!-- Posts -->
+                <div id="feedContent" class="flex flex-col w-full max-w-screen-sm gap-8 my-8">
+                    <!-- Example post -->
+
+                    <div role="status mx-auto">
+                        <svg aria-hidden="true" class="size-40 mx-auto text-white animate-spin dark:text-white fill-highlight" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
+                            <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
+                        </svg>
+                        <span class="sr-only">Loading...</span>
+                    </div>
+
+                    <!-- <div class="flex flex-col gap-2">
+                        <div class="flex items-end gap-1">
+                            <a href="#"><img class="size-12 sm:hidden" src="/src/media/profile-image.png" alt=""></a>
+                            <h2 class="">DanielEker</h2>
+                        </div>
+                        <div class="flex items-center gap-5 border-2 rounded-sm p-4">
+                            <img class="h-16  hidden sm:block" src="/src/media/profile-image.png" alt="">
+                            <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                        <div class="flex justify-start items-center gap-2">
+                            <div class="flex items-center gap-2">
+                                <button id="likeButton" class="h-8 rounded-full"><img class="h-full " src="/src/media/icons/heart-empty.png" alt="like button"></button>
+                                <p class="font-lato" id="likeButtonValue">200</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <button id="commentButton" class="h-8 rounded-full"><img class="h-full " src="/src/media/icons/comment.png" alt="like button"></button>
+                                <p class="font-lato" id="commentButtonValue">32</p>
+                            </div>
+                            <div class="relative">
+                                <button id="postMenu" class="size-8 flex" type="button">
+                                    <img src="/src/media/icons/menu-dots.png" alt="Dropdown menu">
+                                </button>
+                                <div id="postMenuDropdown" class="absolute hidden">
+                                    <ul class="bg-white shadow-lg rounded border py-2">
+                                        <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer">Edit</li>
+                                        <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer">Delete</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    
+                </div>
+            </div>
+        </main>
+      
+      <script type="module" src="../dist/script.mjs"></script>
+    </body>
+</html>
